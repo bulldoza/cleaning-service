@@ -1,0 +1,1758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sparkle Clean Charlotte | Professional House Cleaning</title>
+  <meta name="description" content="Charlotte's most reliable residential cleaning service. Background-checked cleaners, 100% satisfaction guarantee. Get your instant quote in 60 seconds.">
+  <link rel="stylesheet" href="styles.css/style.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary: #0095A1;
+      --primary-dark: #007b85;
+      --text: #0B2D4B;
+      --text-soft: #35526d;
+      --base: #FFFFFF;
+      --support: #E6F7FA;
+      --support-strong: #c9edf2;
+      --accent: #FFD166;
+      --accent-dark: #e6b84f;
+      --line: rgba(11, 45, 75, 0.12);
+      --line-strong: rgba(0, 149, 161, 0.22);
+      --white: #ffffff;
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+      --shadow-md: 0 8px 32px rgba(0,0,0,0.12);
+      --shadow-lg: 0 24px 64px rgba(0,0,0,0.18);
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --radius-xl: 40px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--support);
+      color: var(--text-soft);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ========================
+       NAVIGATION
+    ======================== */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      padding: 0 1.5rem;
+      background: rgba(255,255,255,0.95);
+      -webkit-backdrop-filter: blur(12px);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .nav.scrolled { box-shadow: 0 4px 24px rgba(0,0,0,0.08); }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-logo span { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-soft);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--primary); }
+
+    .btn-nav {
+      background: var(--accent);
+      color: var(--text);
+      border: none;
+      padding: 0.6rem 1.4rem;
+      border-radius: 50px;
+      font-size: 0.875rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+      white-space: nowrap;
+    }
+
+    .btn-nav:hover { background: var(--accent-dark); transform: translateY(-1px); }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px; height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 72px; left: 0; right: 0;
+      background: white;
+      padding: 1.5rem;
+      border-top: 1px solid rgba(0,0,0,0.06);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      z-index: 999;
+    }
+
+    .mobile-menu.open { display: block; }
+    .mobile-menu ul { list-style: none; }
+
+    .mobile-menu ul li a {
+      display: block;
+      padding: 0.85rem 0;
+      font-weight: 500;
+      color: var(--text-soft);
+      text-decoration: none;
+      font-size: 1rem;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      transition: color 0.2s;
+    }
+
+    .mobile-menu ul li a:hover { color: var(--primary); }
+
+    .mobile-menu .btn-nav {
+      display: block;
+      text-align: center;
+      margin-top: 1rem;
+      padding: 0.85rem;
+      font-size: 1rem;
+    }
+
+    /* ========================
+       HERO
+    ======================== */
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: var(--support);
+      padding-top: 72px;
+    }
+
+    /* ── Photo swap-in: replace the gradient below with:
+          background-image: url('your-room.jpg');
+          background-size: cover;
+          background-position: center;
+       Then the .hero-photo-overlay handles text readability. ── */
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(135deg, rgba(230, 247, 250, 0.5) 0%, rgba(201, 237, 242, 0.32) 55%, rgba(216, 243, 246, 0.12) 100%);
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* Overlay for when a photo is used — left side fades to white for text legibility */
+    .hero-photo-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(230,247,250,0.95) 0%, rgba(230,247,250,0.65) 50%, rgba(230,247,250,0) 100%);
+      pointer-events: none;
+    }
+
+    .hero-orb-1 {
+      position: absolute;
+      width: 420px; height: 420px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 209, 102, 0.18) 0%, transparent 65%);
+      top: -60px; right: -60px;
+      animation: float 9s ease-in-out infinite;
+    }
+
+    .hero-orb-2 {
+      position: absolute;
+      width: 300px; height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0, 149, 161, 0.16) 0%, transparent 65%);
+      bottom: 10%; left: -40px;
+      animation: float 11s ease-in-out infinite reverse;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-18px) scale(1.04); }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 4rem 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-text { color: var(--text); }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(0, 149, 161, 0.1);
+      border: 1px solid rgba(0, 149, 161, 0.2);
+      color: var(--primary-dark);
+      padding: 0.35rem 0.9rem;
+      border-radius: 50px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-badge svg { width: 13px; height: 13px; fill: var(--accent); }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.1rem, 5vw, 3.3rem);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero h1 em { font-style: italic; color: var(--primary); }
+
+    .hero-sub {
+      font-size: 1.05rem;
+      color: var(--text-soft);
+      margin-bottom: 2.25rem;
+      line-height: 1.75;
+    }
+
+    .hero-stats { display: flex; gap: 2.5rem; flex-wrap: wrap; }
+
+    .hero-stat { display: flex; flex-direction: column; }
+
+    .hero-stat strong {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.75rem;
+      color: var(--text);
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .hero-stat span {
+      font-size: 0.75rem;
+      color: var(--text-soft);
+      opacity: 0.65;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin-top: 0.2rem;
+    }
+
+    /* Form Card */
+    .form-container {
+      background: var(--base);
+      border-radius: var(--radius-xl);
+      padding: 2.5rem;
+      box-shadow: 0 8px 40px rgba(0, 149, 161, 0.14), 0 2px 8px rgba(0,0,0,0.06), 0 0 0 1px rgba(0, 149, 161, 0.1);
+    }
+
+    .form-header { text-align: center; margin-bottom: 1.5rem; }
+
+    .form-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.45rem;
+      color: var(--text);
+      margin-bottom: 0.2rem;
+    }
+
+    .form-header p { font-size: 0.85rem; color: var(--text-soft); }
+
+    .progress-dots {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: rgba(11, 45, 75, 0.12);
+      transition: all 0.35s ease;
+    }
+
+    .dot.active { width: 24px; border-radius: 4px; background: var(--primary); }
+    .dot.done { background: var(--primary); opacity: 0.38; }
+
+    .step-label {
+      font-size: 0.73rem;
+      color: var(--text-soft);
+      text-align: center;
+      margin-bottom: 1.4rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .form-step { display: none; animation: fadeSlide 0.35s ease; }
+    .form-step.active { display: block; }
+
+    @keyframes fadeSlide {
+      from { opacity: 0; transform: translateX(14px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    .form-step input,
+    .form-step select {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      border: 2px solid rgba(11, 45, 75, 0.12);
+      border-radius: var(--radius-sm);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      color: var(--text);
+      background: rgba(255,255,255,0.78);
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      margin-bottom: 1rem;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    .form-step input:focus,
+    .form-step select:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px rgba(0, 149, 161, 0.12);
+      background: var(--base);
+    }
+
+    .form-step input.error {
+      border-color: #e53e3e;
+      box-shadow: 0 0 0 4px rgba(229,62,62,0.07);
+    }
+
+    .error-msg {
+      font-size: 0.79rem;
+      color: #e53e3e;
+      margin-top: -0.7rem;
+      margin-bottom: 0.75rem;
+      display: none;
+    }
+
+    .error-msg.visible { display: block; }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .card {
+      padding: 0.85rem 0.4rem;
+      border: 2px solid rgba(11, 45, 75, 0.12);
+      border-radius: var(--radius-sm);
+      text-align: center;
+      cursor: pointer;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--text-soft);
+      transition: all 0.2s;
+      background: rgba(255,255,255,0.78);
+      line-height: 1.45;
+      -webkit-user-select: none;
+      user-select: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .card:hover { border-color: var(--primary); color: var(--primary); background: rgba(0, 149, 161, 0.06); }
+
+    .card.selected {
+      border-color: var(--primary);
+      background: rgba(0, 149, 161, 0.1);
+      color: var(--primary);
+    }
+
+    .select-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+
+    .select-row select { margin-bottom: 1rem; }
+
+    .btn-arrow { width: 16px; height: 16px; vertical-align: middle; margin-left: 4px; }
+
+    .form-btn {
+      width: 100%;
+      padding: 1rem;
+      background: var(--accent);
+      color: var(--text);
+      border: none;
+      border-radius: var(--radius-sm);
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      letter-spacing: 0.02em;
+    }
+
+    .form-btn:hover {
+      background: var(--accent-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(255, 209, 102, 0.32);
+    }
+
+    .form-btn:active { transform: translateY(0); }
+
+    .trust {
+      text-align: center;
+      font-size: 0.77rem;
+      color: var(--text-soft);
+      margin-top: 1rem;
+      opacity: 0.75;
+    }
+
+    .trust-badges {
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .trust-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--base);
+      border: 1px solid var(--line-strong);
+      border-radius: 50px;
+      padding: 0.35rem 0.85rem;
+      font-size: 0.74rem;
+      color: var(--text-soft);
+      font-weight: 500;
+      box-shadow: 0 2px 8px rgba(0, 149, 161, 0.08);
+    }
+
+    .trust-badge svg { width: 13px; height: 13px; }
+
+    .hero-wave { position: absolute; bottom: -1px; left: 0; right: 0; }
+
+    /* ========================
+       SOCIAL PROOF BAR
+    ======================== */
+    .proof-bar {
+      background: var(--base);
+      border-bottom: 1px solid rgba(0,0,0,0.055);
+      padding: 1.2rem 1.5rem;
+    }
+
+    .proof-bar-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .proof-item {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.875rem;
+      color: var(--text-soft);
+      font-weight: 500;
+    }
+
+    .proof-item svg { stroke: currentColor; }
+
+    .stars { color: var(--accent); letter-spacing: 1px; font-size: 0.9rem; }
+    .proof-divider { width: 1px; height: 22px; background: rgba(11, 45, 75, 0.12); }
+
+    /* ========================
+       SHARED SECTION STYLES
+    ======================== */
+    .section { padding: 5rem 1.5rem; position: relative; }
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+
+    .section-label {
+      font-size: 0.73rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 0.7rem;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+
+    .section-sub {
+      font-size: 1.03rem;
+      color: var(--text-soft);
+      max-width: 520px;
+      line-height: 1.75;
+    }
+
+    .wave-divider { overflow: hidden; line-height: 0; }
+    .wave-divider svg { display: block; width: 100%; }
+
+    /* ========================
+       HOW IT WORKS
+    ======================== */
+    .how-it-works { background: var(--support); }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.75rem;
+      margin-top: 3rem;
+      position: relative;
+    }
+
+    .steps-grid::before {
+      content: '';
+      position: absolute;
+      top: 44px;
+      left: calc(16.66% + 28px);
+      right: calc(16.66% + 28px);
+      height: 2px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      opacity: 0.22;
+    }
+
+    .step-card {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      background: var(--base);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    .step-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+
+    .step-num {
+      width: 56px; height: 56px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      box-shadow: 0 8px 20px rgba(0, 149, 161, 0.28);
+    }
+
+    .step-num svg { width: 24px; height: 24px; }
+
+    .step-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .step-card p { font-size: 0.875rem; color: var(--text-soft); line-height: 1.7; }
+
+    .step-card--photo { padding-top: 0; overflow: hidden; }
+    .step-card-photo {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      object-position: center 20%;
+      border-radius: var(--radius-md) var(--radius-md) 0 0;
+      margin-bottom: 1.5rem;
+    }
+    .step-card--photo .step-num { margin-left: auto; margin-right: auto; }
+
+    /* ========================
+       SERVICES
+    ======================== */
+    .services-section { background: var(--base); }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .service-card {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      transition: transform 0.25s, box-shadow 0.25s;
+      position: relative;
+    }
+
+    .service-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .service-card.featured { border: 2px solid var(--accent); }
+
+    .service-card-badge {
+      position: absolute;
+      top: 1rem; right: 1rem;
+      background: var(--accent);
+      color: var(--text);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      padding: 0.22rem 0.65rem;
+      border-radius: 50px;
+    }
+
+    .service-card-top { padding: 2rem 1.75rem 1.5rem; background: var(--support); }
+    .service-icon {
+      width: 52px;
+      height: 52px;
+      background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+    .service-icon svg { width: 26px; height: 26px; stroke: white; }
+
+    .service-card-media {
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      background: var(--support);
+      border-bottom: 1px solid var(--line);
+    }
+
+.service-card-media img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .service-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.28rem;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+    }
+
+    .service-card p { font-size: 0.875rem; color: var(--text-soft); line-height: 1.65; }
+
+    .service-card-bottom {
+      padding: 1.5rem 1.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--base);
+    }
+
+    .price { display: flex; flex-direction: column; }
+
+    .price-label {
+      font-size: 0.68rem;
+      color: var(--text-soft);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      opacity: 0.65;
+    }
+
+    .price-amount {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .btn-book {
+      background: var(--accent);
+      color: var(--text);
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 50px;
+      font-size: 0.84rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .btn-book:hover { background: var(--accent-dark); transform: translateY(-1px); }
+
+    /* ========================
+       REVIEWS
+    ======================== */
+    .reviews-section { background: var(--support); }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .review-card {
+      background: var(--base);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    .review-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+
+    .review-quote {
+      position: absolute;
+      top: 1.5rem; right: 1.75rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      line-height: 1;
+      color: rgba(0, 149, 161, 0.18);
+      opacity: 0.5;
+    }
+
+    .review-stars { color: var(--accent); font-size: 0.88rem; letter-spacing: 2px; margin-bottom: 1rem; }
+
+    .review-card p {
+      font-size: 0.9rem;
+      color: var(--text-soft);
+      line-height: 1.72;
+      margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+
+    .reviewer { display: flex; align-items: center; gap: 0.75rem; }
+
+    .reviewer-avatar {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.875rem;
+      color: white;
+      flex-shrink: 0;
+    }
+
+    .reviewer-name { font-weight: 600; font-size: 0.875rem; color: var(--text); }
+    .reviewer-loc { font-size: 0.77rem; color: var(--text-soft); opacity: 0.7; }
+
+    /* ========================
+       TRUST / WHY US
+    ======================== */
+    .trust-section { background: var(--support); }
+    .trust-section .section-title { color: var(--text); }
+    .trust-section .section-sub { color: var(--text-soft); }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .trust-item {
+      background: var(--base);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      padding: 1.75rem;
+      transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .trust-item:hover {
+      border-color: rgba(0, 149, 161, 0.35);
+      box-shadow: 0 6px 24px rgba(0, 149, 161, 0.1);
+    }
+
+    .trust-icon {
+      width: 44px; height: 44px;
+      background: rgba(0, 149, 161, 0.1);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+
+    .trust-icon svg { width: 22px; height: 22px; stroke: var(--primary); fill: none; stroke-width: 2; }
+
+    .trust-icon--green { background: rgba(255, 209, 102, 0.18); }
+    .trust-icon--green svg { stroke: var(--accent-dark); }
+
+    .trust-item h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+    }
+
+    .trust-item p { font-size: 0.84rem; color: var(--text-soft); line-height: 1.68; }
+
+    /* ========================
+       FAQ
+    ======================== */
+    .faq-section { background: var(--support); }
+
+    .faq-layout {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 4rem;
+      margin-top: 3rem;
+      align-items: start;
+    }
+
+    .faq-aside p { font-size: 0.95rem; color: var(--text-soft); line-height: 1.7; margin-top: 1rem; }
+
+    .faq-list { display: flex; flex-direction: column; gap: 0.65rem; }
+
+    .faq-item {
+      background: var(--base);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--line);
+      overflow: hidden;
+    }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 1.2rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.93rem;
+      font-weight: 600;
+      color: var(--text);
+      text-align: left;
+      transition: color 0.2s;
+    }
+
+    .faq-question:hover { color: var(--primary); }
+
+    .faq-question svg {
+      width: 18px; height: 18px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2.5;
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+    }
+
+    .faq-item.open .faq-question { color: var(--primary); }
+    .faq-item.open .faq-question svg { transform: rotate(45deg); }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.38s ease;
+      padding: 0 1.5rem;
+    }
+
+    .faq-answer p {
+      font-size: 0.88rem;
+      color: var(--text-soft);
+      line-height: 1.72;
+      padding-bottom: 1.25rem;
+    }
+
+    .faq-item.open .faq-answer { max-height: 240px; }
+
+    /* ========================
+       FINAL CTA
+    ======================== */
+    .cta-section {
+      background: linear-gradient(135deg, var(--text) 0%, #071d30 60%, #0a2540 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0,149,161,0.18) 0%, transparent 70%);
+      top: -200px; right: -100px;
+    }
+
+    .cta-inner {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 6rem 1.5rem;
+      position: relative;
+    }
+
+    .cta-inner .section-label { color: var(--support); }
+    .cta-inner .section-title { color: white; }
+    .cta-inner .section-sub { color: rgba(255,255,255,0.62); max-width: 100%; margin: 0 auto 2.5rem; }
+
+    .btn-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--accent);
+      color: var(--text);
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    }
+
+    .btn-cta:hover {
+      background: var(--accent-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(255, 209, 102, 0.38);
+    }
+
+    .btn-cta svg { width: 18px; height: 18px; }
+
+    /* ========================
+       FOOTER
+    ======================== */
+    footer { background: #071d30; padding: 3.5rem 1.5rem 2rem; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 3rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .footer-brand .nav-logo { color: white; display: inline-flex; margin-bottom: 0.75rem; }
+
+    .footer-brand p {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.38);
+      line-height: 1.72;
+      max-width: 280px;
+    }
+
+    .footer-contact { margin-top: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem; }
+
+    .footer-contact a {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.84rem;
+      color: rgba(255,255,255,0.45);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-contact a:hover { color: var(--accent); }
+
+    .footer-contact svg {
+      width: 14px; height: 14px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      flex-shrink: 0;
+    }
+
+    .footer-col h4 {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.28);
+      margin-bottom: 1rem;
+    }
+
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+
+    .footer-col ul a {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.45);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-col ul a:hover { color: var(--accent); }
+
+    .footer-bottom {
+      padding-top: 1.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-bottom p { font-size: 0.79rem; color: rgba(255,255,255,0.22); }
+
+    .footer-legal { display: flex; gap: 1.5rem; }
+
+    .footer-legal a {
+      font-size: 0.79rem;
+      color: rgba(255,255,255,0.22);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-legal a:hover { color: var(--accent); }
+
+    /* ========================
+       UTILITY CLASSES
+    ======================== */
+    .wave-bg-cream { background: var(--support); }
+    .wave-bg-white { background: var(--base); }
+    .wave-bg-black { background: #000; }
+    .wave-bg-light-blue { background: var(--support); }
+    .section-label--on-dark { color: var(--support); }
+    .btn-cta--spaced { margin-top: 1.5rem; }
+    .proof-brand { margin-left: 0.25rem; }
+
+    /* ========================
+       RESPONSIVE
+    ======================== */
+    @media (max-width: 1024px) {
+      .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 3rem 1.5rem;
+        gap: 2.5rem;
+      }
+      .hero-stats { justify-content: center; }
+      .steps-grid::before { display: none; }
+      .services-grid, .reviews-grid { grid-template-columns: 1fr 1fr; }
+      .trust-grid { grid-template-columns: 1fr 1fr; }
+      .faq-layout { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links, .btn-nav { display: none; }
+      .hamburger { display: flex; }
+      .steps-grid { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: 1fr; }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .trust-grid { grid-template-columns: 1fr; }
+      .proof-bar-inner { gap: 1rem; }
+      .proof-divider { display: none; }
+      .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+    }
+
+    @media (max-width: 480px) {
+      .services { grid-template-columns: 1fr; }
+      .select-row { grid-template-columns: 1fr; }
+      .form-container { padding: 1.75rem 1.25rem; }
+      .trust-badges { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="mainNav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo" aria-label="Sparkle Clean home">Sparkle<span>.</span></a>
+      <ul class="nav-links" role="list">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <a href="#quote" class="btn-nav">Book Now</a>
+      <button type="button" class="hamburger" id="hamburgerBtn" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Mobile navigation">
+    <ul>
+      <li><a href="#services" onclick="closeMobileMenu()">Services</a></li>
+      <li><a href="#how-it-works" onclick="closeMobileMenu()">How It Works</a></li>
+      <li><a href="#reviews" onclick="closeMobileMenu()">Reviews</a></li>
+      <li><a href="#faq" onclick="closeMobileMenu()">FAQ</a></li>
+    </ul>
+    <a href="#quote" class="btn-nav" onclick="closeMobileMenu()">Book Now</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="quote" aria-labelledby="hero-heading">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-photo-overlay" aria-hidden="true"></div>
+    <div class="hero-orb-1" aria-hidden="true"></div>
+    <div class="hero-orb-2" aria-hidden="true"></div>
+
+    <div class="hero-content">
+      <div class="hero-text">
+        <div class="hero-badge" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          Charlotte's #1 Rated Cleaning Service
+        </div>
+        <h1 id="hero-heading">Finally, a Charlotte Cleaner Who Actually <em>Listens</em></h1>
+        <p class="hero-sub">Tired of missed spots and defensive management? We built Sparkle to bring real accountability back to home cleaning — no franchise excuses, no cut corners.</p>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <strong>500+</strong>
+            <span>Happy Homes</span>
+          </div>
+          <div class="hero-stat">
+            <strong>4.9★</strong>
+            <span>Avg Rating</span>
+          </div>
+          <div class="hero-stat">
+            <strong>5 yrs</strong>
+            <span>Serving Charlotte</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- QUOTE FORM -->
+      <div>
+        <div class="form-container">
+          <div class="form-header">
+            <h2>Get Your Instant Quote</h2>
+            <p>Takes less than 60 seconds</p>
+          </div>
+
+          <div class="progress-dots" id="progressDots" aria-label="Step progress">
+            <div class="dot active" id="dot1"></div>
+            <div class="dot" id="dot2"></div>
+            <div class="dot" id="dot3"></div>
+          </div>
+
+          <p class="step-label" id="stepLabel">Step 1 of 3 — Service Type</p>
+
+          <!-- STEP 1 -->
+          <div class="form-step active" id="step1">
+            <input type="text" id="zip" placeholder="Enter Zip Code" maxlength="5" inputmode="numeric" required aria-label="Zip code" aria-required="true">
+            <p class="error-msg" id="zipError" role="alert">Please enter a valid 5-digit zip code.</p>
+
+            <div class="services" role="group" aria-label="Select a service type">
+              <div class="card" data-service="Standard" role="button" tabindex="0" aria-pressed="false">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+                Standard
+              </div>
+              <div class="card" data-service="Deep Clean" role="button" tabindex="0" aria-pressed="false">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>
+                Deep Clean
+              </div>
+              <div class="card" data-service="Move-Out" role="button" tabindex="0" aria-pressed="false">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                Move-Out
+              </div>
+            </div>
+
+            <button type="button" class="form-btn" onclick="nextStep(2)">See My Price <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
+          </div>
+
+          <!-- STEP 2 -->
+          <div class="form-step" id="step2">
+            <div class="select-row">
+              <select id="bedrooms" aria-label="Number of bedrooms">
+                <option value="">Bedrooms</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4+</option>
+              </select>
+              <select id="bathrooms" aria-label="Number of bathrooms">
+                <option value="">Bathrooms</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3+</option>
+              </select>
+            </div>
+            <button type="button" class="form-btn" onclick="nextStep(3)">Continue <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
+          </div>
+
+          <!-- STEP 3 -->
+          <div class="form-step" id="step3">
+            <input type="text" id="name" placeholder="Full Name" autocomplete="name" aria-label="Full name">
+            <input type="email" id="email" placeholder="Email Address" autocomplete="email" aria-label="Email address">
+            <input type="tel" id="phone" placeholder="Phone Number" autocomplete="tel" aria-label="Phone number">
+            <button type="button" class="form-btn" onclick="submitForm()">Get My Free Quote <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
+          </div>
+        </div>
+
+        <div class="trust-badges">
+          <div class="trust-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#0095A1" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            100% Satisfaction Guarantee
+          </div>
+          <div class="trust-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#007a85" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            Background-Checked Cleaners
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 72" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,36 C240,72 480,0 720,36 C960,72 1200,0 1440,36 L1440,72 L0,72 Z" fill="#ffffff"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- SOCIAL PROOF BAR -->
+  <section class="proof-bar" aria-label="Social proof">
+    <div class="proof-bar-inner">
+      <div class="proof-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3d6070" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+        As seen in <strong class="proof-brand">Charlotte Observer</strong>
+      </div>
+      <div class="proof-divider" aria-hidden="true"></div>
+      <div class="proof-item">
+        <span class="stars" aria-label="5 stars">★★★★★</span>
+        <strong>4.9/5</strong> on Google
+      </div>
+      <div class="proof-divider" aria-hidden="true"></div>
+      <div class="proof-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#FFD166"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <strong>500+</strong>&nbsp;Five-Star Reviews
+      </div>
+      <div class="proof-divider" aria-hidden="true"></div>
+      <div class="proof-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3d6070" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Insured &amp; Bonded in NC
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section how-it-works" id="how-it-works" aria-labelledby="hiw-heading">
+    <div class="section-inner">
+      <p class="section-label">Simple Process</p>
+      <h2 class="section-title" id="hiw-heading">Book in Minutes.<br>Clean by Morning.</h2>
+      <p class="section-sub">No long phone calls, no confusing quotes. Pick your service, tell us about your home, and we handle the rest.</p>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-num" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 12h8M8 8h8M8 16h5"/></svg>
+          </div>
+          <h3>Book Online</h3>
+          <p>Fill out our quick 3-step form to get your personalized quote. Choose your date and confirm in seconds — no calls required.</p>
+        </div>
+        <div class="step-card step-card--photo">
+          <img src="images/janitor cleaning desk.png" alt="Sparkle cleaner smiling and working" class="step-card-photo">
+          <div class="step-num" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+          </div>
+          <h3>We Show Up</h3>
+          <p>Our vetted, background-checked cleaning professionals arrive on time with all supplies and equipment needed.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M8 12l2.5 2.5L16 9"/></svg>
+          </div>
+          <h3>You Relax</h3>
+          <p>Come home to a spotless space. We guarantee you'll love the results — or we'll re-clean for free. No questions asked.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wave-divider wave-bg-cream" aria-hidden="true">
+    <svg viewBox="0 0 1440 56" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,28 C360,56 720,0 1080,28 C1260,42 1350,14 1440,28 L1440,56 L0,56 Z" fill="white"/>
+    </svg>
+  </div>
+
+  <!-- SERVICES -->
+  <section class="section services-section" id="services" aria-labelledby="services-heading">
+    <div class="section-inner">
+      <p class="section-label">What We Offer</p>
+      <h2 class="section-title" id="services-heading">Cleaning Services<br>Built for Charlotte Homes</h2>
+      <p class="section-sub">Every service includes our thorough checklist, professional-grade products, and our satisfaction guarantee.</p>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-card-media">
+            <img src="images/Housekeepers cleaning apartment.png" alt="Two professional housekeepers cleaning a Charlotte apartment living room">
+          </div>
+          <div class="service-card-top">
+            <span class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+            </span>
+            <h3>Standard Clean</h3>
+            <p>Perfect for regular maintenance. We tackle all the essentials — kitchens, bathrooms, living areas, and bedrooms — keeping your home fresh between deep cleans.</p>
+          </div>
+          <div class="service-card-bottom">
+            <div class="price">
+              <span class="price-label">Starting at</span>
+              <span class="price-amount">$99</span>
+            </div>
+            <a href="#quote" class="btn-book">Book Now</a>
+          </div>
+        </div>
+
+        <div class="service-card featured">
+          <div class="service-card-badge">Most Popular</div>
+          <div class="service-card-media">
+            <img src="images/bathroom_clean.png" alt="Cleaner sanitizing a bathroom toilet seat during a deep clean">
+          </div>
+          <div class="service-card-top">
+            <span class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>
+            </span>
+            <h3>Deep Clean</h3>
+            <p>A top-to-bottom intensive clean. We get inside cabinets, behind appliances, scrub grout, and hit every corner your regular cleaning misses.</p>
+          </div>
+          <div class="service-card-bottom">
+            <div class="price">
+              <span class="price-label">Starting at</span>
+              <span class="price-amount">$149</span>
+            </div>
+            <a href="#quote" class="btn-book">Book Now</a>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card-media">
+            <img src="images/Move out day.png" alt="Family packing boxes on move-out day in an empty apartment">
+          </div>
+          <div class="service-card-top">
+            <span class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+            </span>
+            <h3>Move-Out Clean</h3>
+            <p>Get your security deposit back. We clean every inch of the property to meet landlord inspection standards — walls, fixtures, appliances, and more.</p>
+          </div>
+          <div class="service-card-bottom">
+            <div class="price">
+              <span class="price-label">Starting at</span>
+              <span class="price-amount">$199</span>
+            </div>
+            <a href="#quote" class="btn-book">Book Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wave-divider wave-bg-white" aria-hidden="true">
+    <svg viewBox="0 0 1440 56" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,18 C480,56 960,0 1440,28 L1440,56 L0,56 Z" fill="var(--support)"/>
+    </svg>
+  </div>
+
+  <!-- REVIEWS -->
+  <section class="section reviews-section" id="reviews" aria-labelledby="reviews-heading">
+    <div class="section-inner">
+      <p class="section-label">What Clients Say</p>
+      <h2 class="section-title" id="reviews-heading">Loved by Charlotte Families</h2>
+      <p class="section-sub">Don't take our word for it. Here's what our neighbors across Charlotte have to say.</p>
+
+      <div class="reviews-grid">
+        <article class="review-card">
+          <span class="review-quote" aria-hidden="true">"</span>
+          <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p>"I've tried three other cleaning services in Charlotte and none came close. Sparkle showed up on time, communicated perfectly, and my bathroom literally sparkles. Worth every penny."</p>
+          <div class="reviewer">
+            <div class="reviewer-avatar" aria-hidden="true">MH</div>
+            <div>
+              <div class="reviewer-name">Maria Henderson</div>
+              <div class="reviewer-loc">Myers Park, Charlotte</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="review-card">
+          <span class="review-quote" aria-hidden="true">"</span>
+          <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p>"Used them for a move-out clean on our Dilworth condo. Got the full security deposit back — $1,200! The team was professional, thorough, and incredibly easy to book."</p>
+          <div class="reviewer">
+            <div class="reviewer-avatar" aria-hidden="true">JT</div>
+            <div>
+              <div class="reviewer-name">James Turrentine</div>
+              <div class="reviewer-loc">Dilworth, Charlotte</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="review-card">
+          <span class="review-quote" aria-hidden="true">"</span>
+          <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p>"As a busy mom of two, having Sparkle come every other week has been life-changing. The team is consistent, trustworthy, and my kids actually notice how clean the house is. Highly recommend!"</p>
+          <div class="reviewer">
+            <div class="reviewer-avatar" aria-hidden="true">AL</div>
+            <div>
+              <div class="reviewer-name">Ashley Lawson</div>
+              <div class="reviewer-loc">South End, Charlotte</div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <div class="wave-divider wave-bg-cream" aria-hidden="true">
+    <svg viewBox="0 0 1440 56" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,0 C360,56 1080,0 1440,36 L1440,56 L0,56 Z" fill="#E6F7FA"/>
+    </svg>
+  </div>
+
+  <!-- TRUST / WHY US -->
+  <section class="section trust-section" aria-labelledby="trust-heading">
+    <div class="section-inner">
+      <p class="section-label">Why Sparkle</p>
+      <h2 class="section-title" id="trust-heading">Accountability You<br>Can Actually Reach</h2>
+      <p class="section-sub">We started Sparkle because we were tired of seeing Charlotte neighbors pay for "deep cleans" that only scratched the surface. We're small, local, and we don't cut corners.</p>
+
+      <div class="trust-grid">
+        <div class="trust-item">
+          <div class="trust-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Insured &amp; Bonded</h3>
+          <p>Every Sparkle team is fully insured and bonded in North Carolina. Your home and belongings are always protected.</p>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">
+            <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <h3>Vetted &amp; Trustworthy</h3>
+          <p>Every cleaner is thoroughly background-checked before stepping into a client's home. We wouldn't send anyone into your home that we wouldn't trust in our own.</p>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
+          </div>
+          <h3>The Personal Touch Promise</h3>
+          <p>If we miss a detail, we'll come back and fix it personally. No excuses, no runaround — just a clean home, the way we promised.</p>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon trust-icon--green">
+            <svg viewBox="0 0 24 24"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><path d="M12 14c2.5-2 4-4.5 4-7"/></svg>
+          </div>
+          <h3>Eco-Friendly Products</h3>
+          <p>We use non-toxic, EPA-certified cleaning products that are safe for your kids, pets, and the environment.</p>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>Owner-Operated Integrity</h3>
+          <p>The person who cares most about your experience is the one showing up. As an owner-operated business, your home gets the same care we'd give our own.</p>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">
+            <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          </div>
+          <h3>Quotes in Minutes, Not Days</h3>
+          <p>No waiting for callbacks, no vague estimates. Fill out our quick form and we'll get back to you fast — because your time matters as much as your home.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wave-divider wave-bg-light-blue" aria-hidden="true">
+    <svg viewBox="0 0 1440 56" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,28 C480,0 960,56 1440,18 L1440,56 L0,56 Z" fill="var(--support)"/>
+    </svg>
+  </div>
+
+  <!-- FAQ -->
+  <section class="section faq-section" id="faq" aria-labelledby="faq-heading">
+    <div class="section-inner">
+      <div class="faq-layout">
+        <div class="faq-aside">
+          <p class="section-label">FAQ</p>
+          <h2 class="section-title" id="faq-heading">Common Questions</h2>
+          <p>Can't find the answer you're looking for? Our team is happy to help.</p>
+          <a href="tel:7045550190" class="btn-cta btn-cta--spaced">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#0B2D4B" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.45 2 2 0 0 1 3.59 2.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.09 6.09l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Call Us
+          </a>
+        </div>
+
+        <div class="faq-list">
+          <div class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false">
+              Do I need to be home during the cleaning?
+              <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Nope! Many of our clients provide a key or entry code so we can clean while they're at work or out. All cleaners are background-checked and bonded. You'll get a notification when we arrive and when we're done.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false">
+              What's included in a Deep Clean vs. Standard Clean?
+              <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Standard cleans cover all regular surfaces, appliance exteriors, bathrooms, and floors. Deep cleans add inside-appliance cleaning, cabinet interiors, baseboards, light fixtures, and grout scrubbing. We recommend a Deep Clean for first-time clients.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false">
+              Do you bring your own cleaning supplies?
+              <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Yes, we bring everything — professional-grade equipment and EPA-certified eco-friendly products. If you have specific product preferences for certain surfaces, just note them during booking.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false">
+              What areas of Charlotte do you serve?
+              <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>We serve all of Charlotte and surrounding areas including Myers Park, Dilworth, South End, NoDa, Ballantyne, Steele Creek, Huntersville, Cornelius, and Matthews. Enter your zip code in the form to confirm availability.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false">
+              What if I'm not satisfied with the cleaning?
+              <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>We stand behind every clean with our 100% Satisfaction Guarantee. If anything isn't up to your standards, contact us within 24 hours and we'll return to re-clean the affected area for free. No hassle, no questions.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wave-divider wave-bg-cream" aria-hidden="true">
+    <svg viewBox="0 0 1440 56" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,36 C480,72 960,0 1440,28 L1440,56 L0,56 Z" fill="#0B2D4B"/>
+    </svg>
+  </div>
+
+  <!-- FINAL CTA -->
+  <section class="section cta-section" aria-labelledby="cta-heading">
+    <div class="cta-inner">
+      <p class="section-label">Ready to Start?</p>
+      <h2 class="section-title" id="cta-heading">Your Cleanest Home<br>is 60 Seconds Away</h2>
+      <p class="section-sub">Join 500+ Charlotte homeowners who trust Sparkle for a spotless home every time. Get your free, personalized quote now.</p>
+      <a href="#quote" class="btn-cta">
+        Get My Free Quote
+        <svg viewBox="0 0 24 24" fill="none" stroke="#0B2D4B" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#" class="nav-logo">Sparkle<span>.</span></a>
+          <p>Charlotte's most trusted residential cleaning service. Serving Myers Park, Dilworth, South End, and neighborhoods across Charlotte, NC.</p>
+          <div class="footer-contact">
+            <a href="tel:7045550190">
+              <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.45 2 2 0 0 1 3.59 2.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.09 6.09l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              (704) 555-0190
+            </a>
+            <a href="mailto:hello@sparkleclean.com">
+              <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              hello@sparkleclean.com
+            </a>
+            <a href="#">
+              <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Charlotte, NC
+            </a>
+          </div>
+        </div>
+
+        <nav class="footer-col" aria-label="Services navigation">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#services">Standard Clean</a></li>
+            <li><a href="#services">Deep Clean</a></li>
+            <li><a href="#services">Move-Out Clean</a></li>
+            <li><a href="#quote">Get a Quote</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-col" aria-label="Company navigation">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Sparkle Clean Charlotte. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js/clean.js" defer></script>
+
+  <script>
+    // Nav scroll shadow
+    const nav = document.getElementById('mainNav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 20);
+    }, { passive: true });
+
+    // Mobile menu
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    let menuOpen = false;
+
+    function closeMobileMenu() {
+      menuOpen = false;
+      mobileMenu.classList.remove('open');
+      hamburgerBtn.setAttribute('aria-expanded', 'false');
+    }
+
+    hamburgerBtn.addEventListener('click', () => {
+      menuOpen = !menuOpen;
+      mobileMenu.classList.toggle('open', menuOpen);
+      hamburgerBtn.setAttribute('aria-expanded', String(menuOpen));
+    });
+
+    document.addEventListener('click', (e) => {
+      if (menuOpen && !mobileMenu.contains(e.target) && !hamburgerBtn.contains(e.target)) {
+        closeMobileMenu();
+      }
+    });
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => {
+          i.classList.remove('open');
+          i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+        });
+        if (!isOpen) {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    // Service card keyboard support
+    document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          card.click();
+        }
+      });
+    });
+
+    // Progress helpers exposed for clean.js
+    window.updateProgress = function(step) {
+      const labels = [
+        'Step 1 of 3 — Service Type',
+        'Step 2 of 3 — Home Size',
+        'Step 3 of 3 — Your Info'
+      ];
+      document.getElementById('stepLabel').textContent = labels[step - 1];
+      for (let i = 1; i <= 3; i++) {
+        const dot = document.getElementById('dot' + i);
+        dot.classList.remove('active', 'done');
+        if (i < step) dot.classList.add('done');
+        if (i === step) dot.classList.add('active');
+      }
+    };
+
+    // Zip validation helper
+    window.validateZip = function() {
+      const zip = document.getElementById('zip');
+      const err = document.getElementById('zipError');
+      const valid = /^\d{5}$/.test(zip.value.trim());
+      zip.classList.toggle('error', !valid);
+      err.classList.toggle('visible', !valid);
+      return valid;
+    };
+  </script>
+</body>
+</html>
