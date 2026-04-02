@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cleaning Services | Sparkle Clean Charlotte</title>
+  <meta name="description" content="Residential and commercial cleaning services in Charlotte, NC. Standard, deep, move-out, and commercial cleaning with detailed checklists and a 48-hour satisfaction guarantee.">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="mainNav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Sparkle Clean home">Sparkle<span>.</span></a>
+      <ul class="nav-links" role="list">
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html#careers">Work for Us</a></li>
+      </ul>
+      <a href="index.html#quote" class="btn-nav">Book Now</a>
+      <button type="button" class="hamburger" id="hamburgerBtn" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Mobile navigation">
+    <ul>
+      <li><a href="services.html" onclick="closeMobileMenu()">Services</a></li>
+      <li><a href="about.html" onclick="closeMobileMenu()">About Us</a></li>
+      <li><a href="contact.html" onclick="closeMobileMenu()">Contact</a></li>
+      <li><a href="contact.html#careers" onclick="closeMobileMenu()">Work for Us</a></li>
+    </ul>
+    <a href="index.html#quote" class="btn-nav" onclick="closeMobileMenu()">Book Now</a>
+  </div>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">Services</span>
+      </nav>
+      <p class="section-label">What We Offer</p>
+      <h1>Every Clean. <em>Done Right.</em></h1>
+      <p>Four service types built for every situation — from weekly maintenance to move-out ready. Every booking includes our 48-hour satisfaction guarantee.</p>
+    </div>
+  </div>
+
+  <!-- SERVICES DETAIL -->
+  <section class="section services-page" id="services" aria-labelledby="services-heading">
+    <div class="section-inner">
+
+      <!-- STANDARD CLEAN -->
+      <div class="service-detail" id="standard">
+        <div class="service-detail-image">
+          <img src="images/Housekeepers cleaning apartment.png" alt="Two professional cleaners tidying a Charlotte apartment living room">
+        </div>
+        <div>
+          <span class="service-detail-label">Weekly or Biweekly</span>
+          <h2>Standard Clean</h2>
+          <p>Perfect for homes that are already in good shape and just need regular maintenance. We handle all the essentials so you never have to think about it.</p>
+          <div class="service-detail-price">
+            <strong>$99</strong>
+            <span>starting price</span>
+          </div>
+
+          <p class="checklist-title">Kitchen</p>
+          <ul class="checklist">
+            <li>Wipe countertops and backsplash</li>
+            <li>Clean sink and faucet fixtures</li>
+            <li>Wipe exterior of appliances (fridge, stove, microwave)</li>
+            <li>Wipe cabinet fronts</li>
+            <li>Sweep and mop floors</li>
+            <li>Empty trash and replace liner</li>
+          </ul>
+
+          <p class="checklist-title">Bathrooms</p>
+          <ul class="checklist">
+            <li>Scrub toilet inside and out</li>
+            <li>Clean shower, tub, and tile</li>
+            <li>Wipe vanity, sink, and faucet</li>
+            <li>Clean mirrors</li>
+            <li>Sweep and mop floors</li>
+            <li>Restock toilet paper if provided</li>
+          </ul>
+
+          <p class="checklist-title">Bedrooms &amp; Living Areas</p>
+          <ul class="checklist">
+            <li>Dust all furniture surfaces</li>
+            <li>Vacuum carpets and area rugs</li>
+            <li>Sweep and mop hard floors</li>
+            <li>Change bed linens (if provided)</li>
+            <li>Empty trash</li>
+            <li>Clean glass doors and mirrors</li>
+          </ul>
+
+          <a href="index.html#quote" class="btn-cta" style="margin-top:0.5rem;">
+            Book a Standard Clean
+            <svg viewBox="0 0 24 24" fill="none" stroke="#0B2D4B" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- DEEP CLEAN -->
+      <div class="service-detail reverse" id="deep">
+        <div class="service-detail-image">
+          <img src="images/bathroom_clean.png" alt="Cleaner scrubbing a bathroom during a deep clean">
+        </div>
+        <div>
+          <span class="service-detail-label" style="background:rgba(255,209,102,0.15);border-color:rgba(255,209,102,0.4);color:#c49a00;">Most Popular</span>
+          <h2>Deep Clean</h2>
+          <p>A top-to-bottom intensive clean. Everything in a Standard Clean, plus the spots that don't get touched in regular maintenance — inside appliances, grout, baseboards, and more. Recommended for first-time clients.</p>
+          <div class="service-detail-price">
+            <strong>$149</strong>
+            <span>starting price</span>
+          </div>
+
+          <p class="checklist-title">Everything in Standard, plus:</p>
+          <ul class="checklist">
+            <li>Inside microwave (cleaned thoroughly)</li>
+            <li>Inside oven and oven racks</li>
+            <li>Inside refrigerator (shelves and drawers)</li>
+            <li>Inside all cabinets and drawers</li>
+            <li>Baseboards and door frames wiped</li>
+            <li>Ceiling fans dusted</li>
+            <li>Light fixtures cleaned</li>
+            <li>Window sills and window tracks</li>
+            <li>Grout scrubbing in bathrooms</li>
+            <li>Blinds wiped down</li>
+            <li>Behind and under furniture vacuumed</li>
+            <li>Outlet covers wiped</li>
+          </ul>
+
+          <a href="index.html#quote" class="btn-cta" style="margin-top:0.5rem;">
+            Book a Deep Clean
+            <svg viewBox="0 0 24 24" fill="none" stroke="#0B2D4B" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- MOVE-OUT CLEAN -->
+      <div class="service-detail" id="moveout">
+        <div class="service-detail-image">
+          <img src="images/Move out day.png" alt="Empty apartment ready for move-out inspection">
+        </div>
+        <div>
+          <span class="service-detail-label">Move In or Move Out</span>
+          <h2>Move-Out Clean</h2>
+          <p>Get your security deposit back — or hand over a spotless home to the new owners. We clean every inch to landlord and realtor inspection standards.</p>
+          <div class="service-detail-price">
+            <strong>$199</strong>
+            <span>starting price</span>
+          </div>
+
+          <p class="checklist-title">Everything in Deep Clean, plus:</p>
+          <ul class="checklist">
+            <li>Inside all closets and shelving</li>
+            <li>Wipe down all walls and scuff marks</li>
+            <li>Clean all light switches and outlet covers</li>
+            <li>Garage floor sweep and wipe</li>
+            <li>Balcony or patio sweep and wipe</li>
+            <li>All window interiors cleaned</li>
+            <li>Carpet spot treatment</li>
+            <li>All cabinet and drawer interiors</li>
+            <li>Range hood filter cleaned</li>
+          </ul>
+
+          <a href="index.html#quote" class="btn-cta" style="margin-top:0.5rem;">
+            Book a Move-Out Clean
+            <svg viewBox="0 0 24 24" fill="none" stroke="#0B2D4B" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- COMMERCIAL CLEAN -->
+      <div class="service-detail reverse" id="commercial">
+        <div class="service-detail-image" style="background:var(--support);min-height:320px;display:flex;align-items:center;justify-content:center;">
+          <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="3" width="20" height="14" rx="2"/>
+            <path d="M8 21h8M12 17v4"/>
+          </svg>
+        </div>
+        <div>
+          <span class="service-detail-label">Offices &amp; Small Businesses</span>
+          <h2>Commercial Clean</h2>
+          <p>A professional, reliable clean for offices, boutique shops, medical suites, and small commercial spaces. We work around your schedule — early morning, evenings, or weekends — so your business is never disrupted.</p>
+          <div class="service-detail-price">
+            <strong>Custom</strong>
+            <span>quote based on sq ft</span>
+          </div>
+
+          <p class="checklist-title">What's Included</p>
+          <ul class="checklist">
+            <li>All desk, counter, and surface areas</li>
+            <li>Reception and waiting areas</li>
+            <li>Conference and meeting rooms</li>
+            <li>Restrooms fully cleaned and stocked</li>
+            <li>Break room and kitchen areas</li>
+            <li>Floors vacuumed and/or mopped</li>
+            <li>Trash and recycling emptied</li>
+            <li>Glass doors and partition walls</li>
+            <li>Custom frequency: daily, weekly, biweekly</li>
+          </ul>
+
+          <a href="contact.html" class="btn-cta" style="margin-top:0.5rem;">
+            Request a Commercial Quote
+            <svg viewBox="0 0 24 24" fill="none" stroke="#0B2D4B" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ADD-ONS -->
+  <section class="section addons-section" id="addons" aria-labelledby="addons-heading">
+    <div class="section-inner">
+      <p class="section-label">Customize Your Clean</p>
+      <h2 class="section-title" id="addons-heading">Add-On Services</h2>
+      <p class="section-sub">Tack on any of the following to any standard booking. Just note your preferences when filling out the quote form.</p>
+
+      <div class="addons-grid">
+        <div class="addon-card">
+          <div class="addon-price">+$25</div>
+          <div class="addon-name">Inside Refrigerator</div>
+          <div class="addon-desc">Full interior clean including shelves, drawers, and door compartments.</div>
+        </div>
+        <div class="addon-card">
+          <div class="addon-price">+$25</div>
+          <div class="addon-name">Inside Oven</div>
+          <div class="addon-desc">Oven interior, racks, and door glass degreased and scrubbed.</div>
+        </div>
+        <div class="addon-card">
+          <div class="addon-price">+$45</div>
+          <div class="addon-name">Inside Cabinets</div>
+          <div class="addon-desc">All kitchen and bathroom cabinet interiors wiped and cleaned out.</div>
+        </div>
+        <div class="addon-card">
+          <div class="addon-price">+$50</div>
+          <div class="addon-name">Interior Windows</div>
+          <div class="addon-desc">All interior window glass, frames, and sills cleaned streak-free.</div>
+        </div>
+        <div class="addon-card">
+          <div class="addon-price">+$35</div>
+          <div class="addon-name">Laundry Service</div>
+          <div class="addon-desc">One full load — wash, dry, and fold. Just leave the basket out.</div>
+        </div>
+        <div class="addon-card">
+          <div class="addon-price">+$40</div>
+          <div class="addon-name">Garage Sweep</div>
+          <div class="addon-desc">Full garage floor swept and wiped, walls spot-cleaned.</div>
+        </div>
+        <div class="addon-card">
+          <div class="addon-price">+$30</div>
+          <div class="addon-name">Balcony / Patio</div>
+          <div class="addon-desc">Sweep, mop, and wipe down outdoor furniture on the balcony or patio.</div>
+        </div>
+        <div class="addon-card">
+          <div class="addon-price">+$35</div>
+          <div class="addon-name">Carpet Deep Vacuum</div>
+          <div class="addon-desc">Extra-pass deep vacuum of all carpets including edges and corners.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUARANTEE CALLOUT -->
+  <section class="section cta-section" aria-labelledby="guarantee-heading">
+    <div class="cta-inner">
+      <p class="section-label">Our Promise</p>
+      <h2 class="section-title" id="guarantee-heading">48-Hour Satisfaction Guarantee</h2>
+      <p class="section-sub">Not happy with any part of the clean? Contact us within 48 hours and we'll send a team back to re-clean the area for free. No questions, no runaround — just a clean home, done right.</p>
+      <a href="index.html#quote" class="btn-cta">
+        Get My Free Quote
+        <svg viewBox="0 0 24 24" fill="none" stroke="#0B2D4B" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">Sparkle<span>.</span></a>
+          <p>Charlotte's most trusted residential cleaning service. Serving Myers Park, Dilworth, South End, and neighborhoods across Charlotte, NC.</p>
+          <div class="footer-contact">
+            <a href="tel:7045550190">
+              <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.45 2 2 0 0 1 3.59 2.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.09 6.09l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              (704) 555-0190
+            </a>
+            <a href="mailto:hello@sparkleclean.com">
+              <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              hello@sparkleclean.com
+            </a>
+            <a href="contact.html#areas">
+              <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Charlotte, NC &amp; Surrounding Areas
+            </a>
+          </div>
+        </div>
+
+        <nav class="footer-col" aria-label="Services navigation">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#standard">Standard Clean</a></li>
+            <li><a href="#deep">Deep Clean</a></li>
+            <li><a href="#moveout">Move-Out Clean</a></li>
+            <li><a href="#commercial">Commercial</a></li>
+            <li><a href="index.html#quote">Get a Free Quote</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-col" aria-label="Company navigation">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="index.html#reviews">Reviews</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.html#careers">Work for Us</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer-col">
+          <h4>Service Areas</h4>
+          <ul>
+            <li><a href="contact.html#areas">Charlotte</a></li>
+            <li><a href="contact.html#areas">Myers Park</a></li>
+            <li><a href="contact.html#areas">Dilworth</a></li>
+            <li><a href="contact.html#areas">South End</a></li>
+            <li><a href="contact.html#areas">Huntersville</a></li>
+            <li><a href="contact.html#areas">Cornelius</a></li>
+            <li><a href="contact.html#areas">Matthews</a></li>
+            <li><a href="contact.html#areas">Ballantyne</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Sparkle Clean Charlotte. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
